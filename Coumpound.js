@@ -1,11 +1,11 @@
-var p = 10000
-var pmt = 10000
+var p = 150000 //Principal
+var pmt = 4000 //Monthly Addition
 var futureValues = []
-var r = 0.10
-var n = 12
-var t = 10
+var r = 0.10 // Rate of Return
+var n = 12 // Compound Monthly
+var t = 9 // Number of Years
 var reinvested
-var dividendYield = 0.025
+var dividendYield = 0.02// Average Dividend Yield
 
 for (let i=0; i<t+1; i++){
   var ci = p*(Math.pow((1 + (r / n)), (n * i)))
@@ -19,5 +19,5 @@ for (let i=0; i<t+1; i++){
   var reinvested = (Math.floor(ci+fv))
 }
 
-console.log(`$${futureValues[t]}  -  Invested ${t} years without dividends reinvested`)
-console.log(`$${reinvested}  -  Invested ${t} years with dividends reinvested`)
+console.log(` $${Math.floor(futureValues[t]*0.75)}  -  Invested ${t} years without dividends reinvested `)
+console.log(` $${Math.floor(reinvested*0.75)}  -  Invested ${t} years with dividends reinvested `)
